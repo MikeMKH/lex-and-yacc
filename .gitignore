@@ -399,3 +399,9 @@ FodyWeavers.xsd
 
 # Book resources
 .resources/
+
+# flex output
+lex.yy.c
+
+# Example files
+example

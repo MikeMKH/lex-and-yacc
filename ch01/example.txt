@@ -1,0 +1,35 @@
+⋊> ~/K/l/ch01 on main ◦ flex 2.l                                                                                          06:07:07
+⋊> ~/K/l/ch01 on main ◦ gcc lex.yy.c -o example -ll                                                                         06:07:20
+2.l:38:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+main()
+^
+1 warning generated.
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch01 on main ⨯ ./example                                                                                           06:10:20
+hello Lily, hello Mike, were do all the cowboys go
+hello: is not a verb
+Lily: is not a verb
+,hello: is not a verb
+Mike: is not a verb
+,were: is a verb
+do: is a verb
+all: is not a verb
+the: is not a verb
+cowboys: is not a verb
+go: is a verb
+
+⋊> ~/K/l/ch01 on main ⨯ flex even.l; gcc lex.yy.c -o example -ll                                                            06:20:47
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch01 on main ⨯ ./example                                                                                           06:21:29
+123 1234 1 09 8475496276 8 666 13 hello world
+123: is odd
+1234: is even
+1: is odd
+09: is odd
+8475496276: is even
+8: is even
+666: is even
+13: is odd
+hello: is not a number
+world: is not a number
+
