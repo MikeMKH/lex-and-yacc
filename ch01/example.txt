@@ -33,3 +33,30 @@ ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/M
 hello: is not a number
 world: is not a number
 
+
+⋊> ~/K/l/ch01 on main ⨯ flex 4.l; gcc lex.yy.c -o example -ll                                                               06:13:05
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch01 on main ⨯ ./example                                                                                           06:13:23
+verb run sleep type
+noun dog person cat
+dog run
+dog: noun
+run: verb
+dog sleep
+dog: noun
+sleep: verb
+cat sleep
+cat: noun
+sleep: verb
+person type
+person: noun
+type: verb
+7 8 9
+noun rat dog
+!!! warning: word dog already defined 
+verb hide
+rat hide
+rat: noun
+hide: verb
+
+
