@@ -60,3 +60,24 @@ rat: noun
 hide: verb
 
 
+⋊> ~/K/l/ch01 on main ⨯ flex 5.l; bison -d 5.y; gcc -c lex.yy.c 5.tab.c -ll -ly                                             06:44:52
+clang: warning: -ll: 'linker' input unused [-Wunused-command-line-argument]
+clang: warning: -ly: 'linker' input unused [-Wunused-command-line-argument]
+5.y:33:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+yyerror(s)
+^
+5.y:37:1: warning: non-void function does not return a value [-Wreturn-type]
+}
+^
+2 warnings generated.
+⋊> ~/K/l/ch01 on main ⨯ ./example                                                                                           06:45:20
+verb plays
+noun dog
+dog plays
+dog: noun
+plays: verb
+hello dog
+hello:  don't recognize
+dog: noun
+
+

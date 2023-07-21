@@ -402,6 +402,12 @@ FodyWeavers.xsd
 
 # flex output
 lex.yy.c
+lex.yy.o
+
+# bison output
+*.tab.c
+*.tab.h
+*.tab.o
 
 # Example files
 example
