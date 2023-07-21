@@ -4,7 +4,7 @@
  */
 #include <stdio.h>
 int yylex();
-int yyerror();
+void yyerror();
 %}
 
 %token NOUN PRONOUN VERB ADVERB ADJECTIVE PREPOSITION CONJUNCTION
@@ -30,7 +30,7 @@ int main()
 	}
 }
 
-yyerror(s)
+void yyerror(s)
 char *s;
 {
     fprintf(stderr, "%s\n", s);
