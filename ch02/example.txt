@@ -1,0 +1,11 @@
+⋊> ~/K/l/ch02 on main ◦ flex wc.l; gcc lex.yy.c -ll -o example                                                              06:24:19
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch02 on main ◦ ./example wc.l not.found lex.yy.c                                                                   06:24:52
+509     78      32      wc.l
+could not open not.found
+45207   6376    1799    lex.yy.c
+⋊> ~/K/l/ch02 on main ◦ ./example                                                                                           06:24:55
+⋊> ~/K/l/ch02 on main ◦ ./example wc.l lex.yy.c                                                                             06:25:16
+509     78      32      wc.l
+45207   6376    1799    lex.yy.c
+
