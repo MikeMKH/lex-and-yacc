@@ -9,6 +9,7 @@ could not open not.found
 509     78      32      wc.l
 45207   6376    1799    lex.yy.c
 
+
 ⋊> ~/K/l/ch02 on main ◦ flex 7.l; gcc lex.yy.c -ll -o example                                                               05:46:59
 ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
 ⋊> ~/K/l/ch02 on main ◦ ./example                                                                                           05:50:13
@@ -41,4 +42,71 @@ tags
 end
 end
 ^C⏎
+
+
+⋊> ~/K/l/ch02 on main ◦ flex folder.l; gcc lex.yy.c -ll -o example                                                          06:08:00
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch02 on main ◦ ./example                                                                                           06:08:02
+sum
+
+1
+
+2
+
+7
+
+end
+total: 10
+
+product
+
+1
+
+2
+
+7
+
+end
+total: 14
+
+or
+
+1
+
+2
+
+7
+
+end
+total: 7
+
+and
+
+1
+
+2
+
+7
+
+end
+total: 0
+
+and
+
+1
+
+end
+total: 1
+
+and
+
+7
+
+3
+
+end
+total: 3
+
+^C⏎
+
 
