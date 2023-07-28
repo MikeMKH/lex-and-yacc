@@ -110,3 +110,7 @@ total: 3
 ^C⏎
 
 
+⋊> ~/K/l/ch02 on main ◦ flex 9.l; gcc lex.yy.c -ll -o example                                                               06:04:34
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch02 on main ◦ ./example < lex.yy.c                                                                                06:04:53
+code: 1211,             comments: 341,          white space: 328
