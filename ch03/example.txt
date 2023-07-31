@@ -1,0 +1,17 @@
+⋊> ~/K/l/ch03 on main ◦ bison -d 2.y; flex 2.l; gcc -o example  lex.yy.c 2.tab.c -ll -ly                                  06:19:05
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/liby.a(yyerror.o)) was built for newer macOS version (12.1) than being linked (11.0)
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch03 on main ◦ ./example                                                                                         06:19:16
+12 + 34 * 56 + 78 * 90
+= 238860
+⋊> ~/K/l/ch03 on main ◦ ./example                                                                                         06:19:40
+2 + 3
+= 5
+⋊> ~/K/l/ch03 on main ◦ ./example                                                                                         06:19:48
+3 * 7
+= 21
+⋊> ~/K/l/ch03 on main ◦ ./example                                                                                         06:19:57
+x = 9 + 22
+syntax error
+
+
