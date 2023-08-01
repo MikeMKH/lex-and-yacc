@@ -15,3 +15,16 @@ x = 9 + 22
 syntax error
 
 
+⋊> ~/K/l/ch03 on main ◦ bison -d 2.y; flex 2.l; gcc -o example  lex.yy.c 2.tab.c -ll -ly                                    06:00:22
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/liby.a(yyerror.o)) was built for newer macOS version (12.1) than being linked (11.0)
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch03 on main ⨯ ./example                                                                                           06:06:51
+(4 / 2) * 3 - 1
+= 5
+⋊> ~/K/l/ch03 on main ⨯ ./example                                                                                           06:07:34
+123 / (3 + -3)
+cannot divide by 0
+= 123
+⋊> ~/K/l/ch03 on main ⨯ ./example                                                                                           06:08:14
+12*34+56/78-90
+= 318
