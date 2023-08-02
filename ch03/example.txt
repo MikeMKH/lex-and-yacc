@@ -28,3 +28,25 @@ cannot divide by 0
 ⋊> ~/K/l/ch03 on main ⨯ ./example                                                                                           06:08:14
 12*34+56/78-90
 = 318
+
+
+⋊> ~/K/l/ch03 on main ⨯ bison -d 2.y; flex 2.l; gcc -o example  lex.yy.c 2.tab.c -ll -ly                                    06:10:38
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/liby.a(yyerror.o)) was built for newer macOS version (12.1) than being linked (11.0)
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch03 on main ⨯ ./example                                                                                           06:04:29
+2 + 2
+= 4
+a = 3 * 4
+b = 7 / 8
+a + b
+= 12.875
+c = 2/3
+d = 1.2e+12 * (123-4567)
+c
+= 0.666667
+d
+= -5.3328e+15
+a*b+c-d/0.5
+= 1.06656e+16
+$
+⋊> ~/K/l/ch03 on main ⨯ 
