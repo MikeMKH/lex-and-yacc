@@ -1,13 +1,9 @@
-/*
- *	Header for calculator program
- */
-
-#define NSYMS 20	/* maximum number of symbols */
+#define NUMBER_SYM 20  /* maximum number of symbols */
 
 struct symtab {
-	char *name;
-	double value;
-} symtab[NSYMS];
+  char *name;
+  double value;
+} symtab[NUMBER_SYM];
 
 struct symtab *symlook();
 

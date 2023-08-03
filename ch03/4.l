@@ -5,19 +5,20 @@
 %}
 
 %%
-([0-9]+|([0-9]*\.[0-9]+)([eE][-+]?[0-9]+)?) {
-		yylval.dval = atof(yytext);
-		return NUMBER;
-	}
 
-[ \t]	;		 /* ignore white space */
+(([0-9]+|([0-9]*\.[0-9]+))([eE][-+]?[0-9]+)?) {
+    yylval.val = atof(yytext);
+    return NUMBER;
+}
 
-[A-Za-z][A-Za-z0-9]*	{	/* return symbol pointer */
-		yylval.symp = symlook(yytext);
-		return NAME;
-	}
+[ \t] ; /* ignore white space */
 
-"$"	{ return 0; }
+[A-Za-z][A-Za-z0-9]*  {
+    yylval.symp = symlook(yytext); /* return symbol pointer */
+    return NAME;
+}
 
-\n	|
-.	return yytext[0];
+"$" { return 0; }
+
+\n |
+.  return yytext[0];

@@ -50,3 +50,16 @@ a*b+c-d/0.5
 = 1.06656e+16
 $
 ⋊> ~/K/l/ch03 on main ⨯ 
+
+
+⋊> ~/K/l/ch03 on main ◦ bison -d 4.y; flex 4.l; gcc -o example  lex.yy.c 4.tab.c -ll -ly                                    06:04:01
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/liby.a(yyerror.o)) was built for newer macOS version (12.1) than being linked (11.0)
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch03 on main ⨯ ./example                                                                                           06:08:22
+hello = (22*2)/11
+lily=2-3
+hello+lily
+= 3
+$
+⋊> ~/K/l/ch03 on main ⨯
+
