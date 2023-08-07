@@ -63,3 +63,23 @@ hello+lily
 $
 ⋊> ~/K/l/ch03 on main ⨯
 
+
+⋊> ~/K/l/ch03 on main ⨯ bison -d 4.y; flex 4.l; gcc -o example  lex.yy.c 4.tab.c -ll -ly                                    06:22:18
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/liby.a(yyerror.o)) was built for newer macOS version (12.1) than being linked (11.0)
+ld: warning: object file (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libl.a(libyywrap.o)) was built for newer macOS version (12.1) than being linked (11.0)
+⋊> ~/K/l/ch03 on main ⨯ ./example                                                                                           06:22:28
+two = sqrt(4)
+three = 1.5*2
+two+three
+= 5
+$
+⋊> ~/K/l/ch03 on main ⨯ ./example                                                                                           06:23:42
+log(10)
+= 2.30259
+exp(2.30529)
+= 10.0271
+sqrt(2)
+= 1.41421
+123/456*7.89+1e2-3E-456
+= 102.128
+$
