@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 %}
 
 %union {
@@ -40,12 +41,23 @@ expression:  expression '+' expression { $$ = $1 + $3; }
   |          '(' expression ')' { $$ = $2; }
   |          NUMBER
   |          NAME { $$ = $1->value; }
+  |          NAME '(' expression ')' {
+               if($1->funcp)
+                 $$ = ($1->funcp)($3);
+               else
+                 printf("%s not a function", $1->name);
+             }
   ;
 
 %%
 
 int main()
 {
+  extern double sqrt(), exp(), log();
+  addfunc("sqrt", sqrt);
+  addfunc("exp" , exp);
+  addfunc("log" , log);
+  
   yyparse();
 }
 
@@ -70,4 +82,10 @@ struct symtab * symlook(char *s)
   }
   yyerror("Too many symbols");
   exit(1);
+}
+
+void addfunc(char* name, double (*f)())
+{
+  struct symtab *sp = symlook(name);
+  sp->funcp = f;
 }
