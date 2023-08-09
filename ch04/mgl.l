@@ -1,4 +1,5 @@
 ws [ \t]+
+comment #.*
 qstring \"[^\"\n]*[\"\n]
 id [a-zA-Z][a-zA-Z0-9]*
 nl \n
@@ -6,6 +7,7 @@ nl \n
 %%
 
 {ws} ; /* ignore */
+{comment} ; /* ignore */
 {qstring} {
   yylval.string = strdup(yytext+1); /* skip openning quote */
   
@@ -16,17 +18,26 @@ nl \n
 
   return QSTRING;
 }
+
+screen { return SCREEN; }
+title { return TITLE; }
+item { return ITEM; }
+command { return COMMAND; }
+action { return ACTION; }
+execute { return EXECUTE; }
+menu { return MENU; }
+quit { return QUIT; }
+ignore { return IGNORE; }
+attribute { return ATTRIBUTE; }
+visible { return VISIBLE; }
+invisible { return INVISIBLE; }
+end { return END; }
+
 {id} {
   yylval.string = strdup(yytext);
   return ID;
 }
-
-action { return ACTION; }
-execute { return EXECUTE; }
-command { return COMMAND; }
-ignore { return IGNORE; }
-item { return ITEM; }
-title { return TITLE; }
-
 {nl} { lineno++; }
 . { return }
+
+%%
