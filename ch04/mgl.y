@@ -1,15 +1,28 @@
 %{
+#include "mgl.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h> 
+#include <string.h>
+
+int screen_done = 1;
+char *act_str;
+char *cmd_str;
+char *item_str;
 %}
 
 %union {
   char *string; /* buffer */
+  int cmd; /* value */
 }
 
-%token ACTION EXECUTE COMMAND IGNORE ITEM TITLE
-%token <string> QSTRING ID
+%token <string> QSTRING ID COMMENT 
+%token <cmd> SCREEN TITLE ITEM COMMAND ACTION EXECUTE EMPTY
+%token <cmd> MENU QUIT IGNORE ATTRIBUTE VISIBLE INVISIBLE END
+
+%type <cmd> action line attribute command
+%type <string> id qstring
+
+%start screens
 
 %%
 
@@ -21,12 +34,12 @@ screen: screen_name screen_contents screen_terminator
       | screen_name screen_terminator
       ;
 
-screen_name: SCREEN ID
-           | SCREEN
+screen_name: SCREEN ID { start_screen($2); }
+           | SCREEN { start_screen(strdup("default")); }
            ;
 
-screen_terminator: END ID
-                 | END
+screen_terminator: END ID { end_screen($2); }
+                 | END { end_screen(strdup("default")); }
                  ;
 
 screen_contents: titles lines
@@ -36,7 +49,7 @@ titles: /* empty */
       | titles title
       ;
 
-title: TITLE QSTRING
+title: TITLE QSTRING { add_title($2); }
      ;
      
 items: /* empty */
@@ -58,16 +71,34 @@ command: /* empty */
        ;
 
 action: EXECUTE QSTRING
+      {
+        act_str = $2;
+        $$ = EXECUTE;
+      }
       | MENU ID
-      | QUIT
-      | IGNORE
+      {
+        act_str = malloc(strlen($2) + 6);
+        strcpy(act_str, "menu_");
+        strcat(act_str, $2);
+        free($2);
+        $$ = MENU;
+      }
+      | QUIT { $$ = QUIT; }
+      | IGNORE { $$ = IGNORE; }
       ;
 
-attribute: /* empty */
-         | ATTRIBUTE VISIBLE
-         | ATTRIBUTE INVISIBLE
+attribute: /* empty */ { $$ = VISIBLE; }
+         | ATTRIBUTE VISIBLE { $$ = VISIBLE; }
+         | ATTRIBUTE INVISIBLE { $$ = INVISIBLE; }
          ;
 
+id: ID { $$ = $1; }
+  | QSTRING { $$ = $1; }
+  ;
+
+qstring: QSTRING { $$ = $1; }
+       | ID { $$ = $1; }
+       ;
 %%
 
 char *progname = "mgl";

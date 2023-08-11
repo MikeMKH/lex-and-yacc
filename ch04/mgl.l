@@ -1,3 +1,11 @@
+%{
+#include "mgl.h"
+#include "mgl.tab.h"
+#include <string.h>
+
+extern int lineno;
+%}
+
 ws [ \t]+
 comment #.*
 qstring \"[^\"\n]*[\"\n]
@@ -38,6 +46,6 @@ end { return END; }
   return ID;
 }
 {nl} { lineno++; }
-. { return }
+. { return yytext[0]; }
 
 %%
